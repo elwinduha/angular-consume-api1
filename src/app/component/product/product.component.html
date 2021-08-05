@@ -1,0 +1,28 @@
+<h2>List Of Products</h2>
+
+<a routerLink="add">Add New Product</a>
+<br><br>
+<table border="1px" cellspacing="0" cellpadding="5">
+  <thead>
+  <tr>
+    <th>Product Id</th>
+    <th>Product</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Option</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let prod of products">
+    <td>{{prod.id}}</td>
+    <td>{{prod.name | uppercase}}</td>
+    <td>{{prod.description}}</td>
+    <td>{{prod.price}}</td>
+    <td>
+      <a routerLink="d/{{prod.id}}" class="option">EDIT</a>
+      |
+      <a routerLink="d/{{prod.id}}" class="option">DELETE</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
